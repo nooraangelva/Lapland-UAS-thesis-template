@@ -56,17 +56,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % A4 mitat ovat 210x297 (mm), ylämarginaali 30 mm, vasen marginaali 30 mm
-% tekstin korkeus 237=297-30-30, tekstin leveys 150=210-30-30
-% mikäli gradu on tarkoitus painattaa, tulee mittoja muuttaa painon
-% vaatimusten mukaisesti. Esimerkiksi asettamalla left=40mm saadaan nidontapuolelle
-% mitaksi 40 (mm), mutta reunapuolelle 20=210-150-40.
+
+% Lapin AMK
+% 40 mm vasen reuna lapinamk
+% 20 mm ylä- ja oikreuna lapinamk
+% 210 - 40 - 20 = 150 leveys
+% 297 - 20 -20 = 257 korkeus
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{geometry}
 \geometry{
  a4paper,
- total={150mm,237mm},
- left=30mm,
- top=30mm,
+ total={150mm,257mm},
+ left=40mm,
+ top=20mm,
  }
 
 
@@ -91,10 +93,10 @@
 \newcommand{\titteli}{{ }} %voi jättää tyhjäksi
 \newcommand{\otsikko}{{Headline}}   %Gradun otsikko
 \newcommand{\tutkielma}{{Thesis}}   %Pro Gardu tai LuK. Huom kirjoitusasu, välilyönti lopussa graduille
-\newcommand{\aika}{{Kesäkuu 2021}}   %Kuukausi ja vuosi
-\newcommand{\paaaine}{{Information and Communication Technology}} %tai Tilastotiede
-\newcommand{\ohjaaja}{{Prof. H. H.}} %Ohjaajan titteli (Prof./Dos./FT) ja nimi 
-\newcommand{\tarkastaja}{{Dos. D.D. }} %Toisen tarkastajan titteli (Prof./Dos./FT) ja nimi
+\newcommand{\aika}{{2021}}   %vuosi
+\newcommand{\tutkintonimike}{{Engineer of Information and Communication Technology}} %tai Tilastotiede
+\newcommand{\opinnaytetyo}{{Opinäytetyö}} %Opinnatetyo (Prof./Dos./FT) ja nimi 
+\newcommand{\koulutus}{{Koulutus}} %Koulutus
 
 
 \begin{document}
@@ -102,62 +104,59 @@
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 
 \begin{center}
-\includegraphics[width=10cm]{UAS_Logo} %talleta kuva linkistä omaan hakemistoosi
+\includegraphics[width=6cm]{UAS_Logo} %talleta kuva linkistä omaan hakemistoosi
 \end{center}
 
+% korjaa fontti koko ja korkeus
 \vspace{3.0cm}
-\begin{center}\large
-{\sc \otsikko} 
+\begin{center}\LARGE
+\otsikko 
+\end{center}
+
+% korjaa korkeus
+\vspace{9cm}
+\begin{center}
+\tekija
 \end{center}
 
 \vspace{0.5cm}
 \begin{center}
-\titteli \tekija
-\end{center}
+\opinnaytetyo 
+\\ \koulutus
+\\ \tutkintonimike
+\\ \end{center}
 
+%korjaa koko ja korkeus
 \vspace{0.5cm}
-\begin{center}
-%\tutkielma -tutkielma\\ poistettu autm. lisäys
+\begin{center}\LARGE
 \aika
 \end{center}
 
-\vspace{2.5cm}
-\begin{center}
-\begin{tabular}{l}
-Tarkastajat:\\
-\ohjaaja \\
-\tarkastaja
-\end{tabular}
-\end{center}
-
-
-\vspace{2.5cm}
-\begin{center}
-Lapland University of Applied Sciences
-\end{center}
-
 \newpage\null
-
-\vspace{22cm}
-
-%Pakollinen ilmoitus Turnitin-järjestelmän käytöstä:
-\noindent Turun yliopiston laatujärjestelmän mukaisesti tämän julkaisun alkuperäisyys on tarkastettu
-Turnitin OriginalityCheck-järjestelmällä
-
-\cleardoublepage
-
-
+% tiivistelma (FIN)
 
 
 \noindent
-Lapland University of Applied Sciences\\
-Information and Communication Technology\\
-\\
-{\sc \tekija}: \otsikko \\
-\tutkielma -tutkielma, 39 s., 12 liites.\\ %täytä sivumäärät!
-\paaaine \\ 
+\pagestyle{empty}  %ei sivunumeroa sivun alareunaan
+\vspace{1.27cm}
+
+%\begin{left}
+\includegraphics[width=4.83cm]{UAS_Logo} 
+%\end{left}
+
+%
+% Tahan jaaty korjaa, vasen reuna (40mm)
+%
+
+\vspace{0.5cm}
+\begin{center}
+\tekija \\
+\otsikko \\
+%\paaaine \\ 
 \aika \\
-\rule{\textwidth}{.2mm}\\
+\end{center}
+
+%\rule{\textwidth}{.2mm}\\
 \\
 
 \vspace{4mm}\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
