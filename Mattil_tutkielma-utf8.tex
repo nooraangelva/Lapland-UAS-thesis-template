@@ -15,7 +15,7 @@
 \usepackage{amsmath}													% AMS-matematiikkatoimintoja
 \usepackage{graphicx}           							% kuvat
 %\usepackage[dvips]{graphicx}           			% ps-kuvat
-
+\usepackage{graphicx,wrapfig,lipsum}
 
 % Seuraavat rivit määrittävät LaTeXin oletusfontin Computer Modern sijasta käytettäväksi New TX-fontin. Poista 
 % rivien ensimmäinen % jos tahdot käyttää New TX-fonttia.
@@ -90,11 +90,16 @@
 %Määrittele tässä aika, työn, kirjoittajan ja ohjaajien tiedot
 
 \newcommand{\tekija}{{Noora Angelva}} %tekijän nimi
+\newcommand{\Ohjaajat}{{Maisa Mielikäinen ja Tuija x}} %tekijän nimi
+\newcommand{\Toimeksiantaja}{{Yhtiö X}} %tekijän nimi
 \newcommand{\titteli}{{ }} %voi jättää tyhjäksi
 \newcommand{\otsikko}{{Headline}}   %Gradun otsikko
 \newcommand{\tutkielma}{{Thesis}}   %Pro Gardu tai LuK. Huom kirjoitusasu, välilyönti lopussa graduille
 \newcommand{\aika}{{2021}}   %vuosi
 \newcommand{\tutkintonimike}{{Engineer of Information and Communication Technology}} %tai Tilastotiede
+\newcommand{\tutkintonimikeFin}{{Tieto- ja viestintätekniikan insinööri}}
+\newcommand{\Koulutus}{{Engineer (Bachelor)}}
+\newcommand{\KoulutusFin}{{Insinööri (AMK)}}
 \newcommand{\opinnaytetyo}{{Opinäytetyö}} %Opinnatetyo (Prof./Dos./FT) ja nimi 
 \newcommand{\koulutus}{{Koulutus}} %Koulutus
 
@@ -133,6 +138,58 @@
 \end{center}
 
 \newpage\null
+% tiivistelma (EN)
+
+
+\noindent
+\pagestyle{empty}  %ei sivunumeroa sivun alareunaan
+\vspace{1.27cm}
+
+% Tahan jaaty korjaa, vasen reuna (40mm)
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=4.83cm]{UAS_Logo}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}\raggedleft
+Opinnäytetyön tiivistelmä\\
+\end{minipage}
+
+
+%\vspace{0.5cm}
+\noindent \Koulutus \\
+\tutkintonimike \\
+
+%
+% Tahan jaaty korjaa, vasen reuna (40mm)
+%
+
+%\rule{\textwidth}{.2mm}\\
+
+%viiva tähän
+
+\noindent Author \	\tekija\\
+Year \	\aika \\
+Supervisor(s)	\ \Ohjaajat \\
+Commissioned by	\ \Toimeksiantaja \\
+Subject of thesis \	\opinnaytetyo \\
+Number of pages \	XX + X \\
+
+
+%viiva tähän
+
+%tiivistelmä ->
+
+\vspace{4mm}\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
+alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
+
+\vspace{4mm}\noindent Komento $\backslash$vspace taasen jättää sopivan välin kappaleiden väliin - 4mm näyttää aika hyvältä.
+
+\vspace{4mm}\noindent Kirjoita tiivistelmä napakasti ja kaikenlaista toistoa välttäen.
+
+\vspace{4mm}\noindent Keywords: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
+
+
+
+\newpage\null
 % tiivistelma (FIN)
 
 
@@ -140,24 +197,39 @@
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 \vspace{1.27cm}
 
-%\begin{left}
-\includegraphics[width=4.83cm]{UAS_Logo} 
-%\end{left}
+% Tahan jaaty korjaa, vasen reuna (40mm)
+\begin{minipage}{0.3\textwidth}
+\includegraphics[width=4.83cm]{UAS_Logo}
+\end{minipage}
+\begin{minipage}{0.6\textwidth}\raggedleft
+Opinnäytetyön tiivistelmä\\
+\end{minipage}
+
+
+%\vspace{0.5cm}
+\noindent
+\KoulutusFin \\
+\tutkintonimikeFin \\
 
 %
 % Tahan jaaty korjaa, vasen reuna (40mm)
 %
 
-\vspace{0.5cm}
-\begin{center}
-\tekija \\
-\otsikko \\
-%\paaaine \\ 
-\aika \\
-\end{center}
-
 %\rule{\textwidth}{.2mm}\\
-\\
+
+%viiva tähän
+
+\noindent Tekijä \	\tekija\\
+Vuosi \	\aika \\
+Ohjaaja(t)	\ \Ohjaajat \\
+Toimeksiantaja	\ \Toimeksiantaja \\
+Työn nimi \	\opinnaytetyo \\
+Sivu- ja liitesivumäärä \	XX + X \\
+
+
+%viiva tähän
+
+%tiivistelmä ->
 
 \vspace{4mm}\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
 alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
@@ -169,14 +241,14 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \vspace{4mm}\noindent Asiasanat: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
 
 
+% uusi sivu Sisällysluettelo
 
-
-\cleardoublepage
-
+%\cleardoublepage
+\newpage\null
 \tableofcontents
 %Aja laTeX-käännös uudelleen saadaksesi ajantasaisen sisällysluettelon
-
-\cleardoublepage
+%\cleardoublepage
+\newpage\null
 
 \pagestyle{plain} 
 \pagenumbering{arabic} % Saavutettavuus: Aloitetaan arabialaisilla numeroilla tältä sivulta
