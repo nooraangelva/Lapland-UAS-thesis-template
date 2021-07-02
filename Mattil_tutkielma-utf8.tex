@@ -7,7 +7,7 @@
 % Yllä on määritelty pdf/a-muotoon vaadittu metadata minimaalisella tavalla
 %Tämän LaTeX-pohjan laadintaan ovat osallistuneet Mika Hirvensalo, Teemu Pirttimäki, Petriina Paturi ja Vesa Halava
 
-\documentclass[a4paper,12pt,twoside]{article} % kaksipuolinen
+\documentclass[a4paper,12pt,oneside]{article} % yksipuolinen
 \usepackage[finnish]{babel}            				% suomenkielinen tavutus ja sanasto
 \usepackage[T1]{fontenc}               				% valitaan ääkkösfonttikoodaus
 \usepackage[utf8]{inputenc}        						% skandit utf-8 koodauksella
@@ -105,11 +105,11 @@
 
 
 \begin{document}
-\pagenumbering{roman} %Saavuttavuuden takija alussa sivunurot roomalaisittain, tutkielman alusta arabialaisittain.
+\pagenumbering{arabic} %Saavuttavuuden takija alussa sivunurot roomalaisittain, tutkielman alusta arabialaisittain.
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 
 \begin{center}
-\includegraphics[width=6cm]{UAS_Logo} %talleta kuva linkistä omaan hakemistoosi
+\includegraphics[width=6cm]{UAS_Logo}
 \end{center}
 
 % korjaa fontti koko ja korkeus
@@ -137,46 +137,39 @@
 \aika
 \end{center}
 
+% TIIVISTELMÄ (EN) %
+
 \newpage\null
-% tiivistelma (EN)
-
-
-\noindent
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 \vspace{1.27cm}
 
+% YLATUNNISTE
 % Tahan jaaty korjaa, vasen reuna (40mm)
-\begin{minipage}{0.3\textwidth}
-\includegraphics[width=4.83cm]{UAS_Logo}
+\noindent\begin{minipage}{0.4\textwidth}
+\noindent\includegraphics[width=4.83cm]{ylatunnisteLogo}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}\raggedleft
 Opinnäytetyön tiivistelmä\\
 \end{minipage}
-
-
 %\vspace{0.5cm}
 \noindent \Koulutus \\
 \tutkintonimike \\
+\rule{\textwidth}{.2mm}\\
 
+% YLATUNNISTE END
 %
 % Tahan jaaty korjaa, vasen reuna (40mm)
 %
 
-%\rule{\textwidth}{.2mm}\\
+\vspace{1mm}\noindent \textbf{Author} \	\tekija\\
+\vspace{1mm}\noindent \textbf{Year} \	\aika \\
+\vspace{1mm}\noindent \textbf{Supervisor(s)}	\ \Ohjaajat \\
+\vspace{1mm}\noindent \textbf{Commissioned by}	\ \Toimeksiantaja \\
+\vspace{1mm}\noindent \textbf{Subject of thesis} \	\opinnaytetyo \\
+\vspace{1mm}\noindent \textbf{Number of pages} \	XX + X \\
+\rule{\textwidth}{.2mm}\\
 
-%viiva tähän
-
-\noindent Author \	\tekija\\
-Year \	\aika \\
-Supervisor(s)	\ \Ohjaajat \\
-Commissioned by	\ \Toimeksiantaja \\
-Subject of thesis \	\opinnaytetyo \\
-Number of pages \	XX + X \\
-
-
-%viiva tähän
-
-%tiivistelmä ->
+%TIIVISTELMÄ ->
 
 \vspace{4mm}\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
 alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
@@ -188,48 +181,35 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \vspace{4mm}\noindent Keywords: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
 
 
+% TIIVISTELMÄ (FIN) %
 
 \newpage\null
-% tiivistelma (FIN)
-
-
-\noindent
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 \vspace{1.27cm}
 
-% Tahan jaaty korjaa, vasen reuna (40mm)
-\begin{minipage}{0.3\textwidth}
-\includegraphics[width=4.83cm]{UAS_Logo}
+% YLATUNNISTE
+\noindent\begin{minipage}{0.4\textwidth}
+\noindent\includegraphics[width=4.83cm]{ylatunnisteLogo}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}\raggedleft
 Opinnäytetyön tiivistelmä\\
-\end{minipage}
-
-
+\end{minipage}\
 %\vspace{0.5cm}
-\noindent
-\KoulutusFin \\
+\noindent\KoulutusFin \\
 \tutkintonimikeFin \\
+\rule{\textwidth}{.2mm}\\
+% YLATUNNISTE END
 
-%
-% Tahan jaaty korjaa, vasen reuna (40mm)
-%
-
-%\rule{\textwidth}{.2mm}\\
-
-%viiva tähän
-
-\noindent Tekijä \	\tekija\\
-Vuosi \	\aika \\
-Ohjaaja(t)	\ \Ohjaajat \\
-Toimeksiantaja	\ \Toimeksiantaja \\
-Työn nimi \	\opinnaytetyo \\
-Sivu- ja liitesivumäärä \	XX + X \\
+\vspace{1mm}\noindent \textbf{Tekijä} \	\tekija\\
+\vspace{1mm}\noindent \textbf{Vuosi} \	\aika \\
+\vspace{1mm}\noindent \textbf{Ohjaaja(t)}	\ \Ohjaajat \\
+\vspace{1mm}\noindent \textbf{Toimeksiantaja}	\ \Toimeksiantaja \\
+\vspace{1mm}\noindent \textbf{Työn nimi} \	\opinnaytetyo \\
+\vspace{1mm}\noindent \textbf{Sivu- ja liitesivumäärä} \	XX + X \\
+\noindent\rule{\textwidth}{.2mm}\\
 
 
-%viiva tähän
-
-%tiivistelmä ->
+% TIIVISTELMä ->
 
 \vspace{4mm}\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
 alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
@@ -241,19 +221,20 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \vspace{4mm}\noindent Asiasanat: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
 
 
-% uusi sivu Sisällysluettelo
+% SISALLYSLUETTELO %
 
-%\cleardoublepage
 \newpage\null
 \tableofcontents
 %Aja laTeX-käännös uudelleen saadaksesi ajantasaisen sisällysluettelon
 %\cleardoublepage
+
+
+% TEKSTI OSUUS %
+
 \newpage\null
-
 \pagestyle{plain} 
-\pagenumbering{arabic} % Saavutettavuus: Aloitetaan arabialaisilla numeroilla tältä sivulta
 
-\section{Integraalilaskentaa}
+\section{Alkusanat}
 
 Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava \cite{NewtLeib}.
 
@@ -281,7 +262,7 @@ A=\left(\begin{array}{rrr} -1 & -2 & -5\\ 3& 4& 5\\ -3 & 2 & 1 \end{array}\right
 \]
 ominaisarvoja.
 
-\section{Saavutettavuus ja kuvat}
+\section{Käytetyt merkit ja lyhenteet}
 
 UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
 
@@ -299,7 +280,7 @@ Kaikkiin tutkielmassa esiintyviin kuviin tulee viitata tekstissä (ks.~\ref{kuva
 \caption{Geronon lemniskaatta välillä $[-1,1]$.}
 \end{figure}
 
-\section{Tekstiä}
+\section{Johdanto}
 
 \lipsum[1-10]
 
