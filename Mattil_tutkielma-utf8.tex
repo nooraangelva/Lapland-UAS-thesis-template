@@ -70,8 +70,8 @@
  left=40mm,
  top=20mm,
  }
-
-
+% asettelu!!!!!!!!!!!!
+%https://en.wikibooks.org/wiki/LaTeX/Page_Layout
 
 %Suomenkieliset ympäristöt: 
 
@@ -234,7 +234,7 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \newpage\null
 \pagestyle{plain} 
 
-\section{Alkusanat}
+\section{ALKUSANAT}
 
 Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava \cite{NewtLeib}.
 
@@ -243,6 +243,32 @@ Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava \cite{NewtLei
 \int_a^bf(x)\,dx=F(b)-F(a).
 \]
 \end{theorem}
+
+
+\section{KÄYTETYT MERKIT JA LYHENTEET}
+
+UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
+
+
+
+\subsection{Saavutettavuus kuvateksteissä}
+
+Kaikkiin tutkielmassa esiintyviin kuviin tulee viitata tekstissä (ks.~\ref{kuvatus1}) Lisäksi kuvatekstin tulee olla kuvaileva, koska saavutettavuuteen liittyvät alt-tekstit eivät oikein toimi käytetyn \LaTeX :n axessibility-paketin kanssa. Jos kuvan perusteella tehdään päätelmä, tulee päätelmä kuvata tekstissä. 
+
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[width=.45\textwidth]{siivet.jpg}
+\end{center}
+\label{kuvatus1}
+\caption{Geronon lemniskaatta välillä $[-1,1]$.}
+\end{figure}
+
+
+\section{JOHDANTO}
+\lipsum[1-10]
+
+\section{KÄSITTELYOSA}
+\lipsum[1-10]
 
 \subsection{Analyyttistä lukuteoriaa}
 
@@ -262,26 +288,9 @@ A=\left(\begin{array}{rrr} -1 & -2 & -5\\ 3& 4& 5\\ -3 & 2 & 1 \end{array}\right
 \]
 ominaisarvoja.
 
-\section{Käytetyt merkit ja lyhenteet}
-
-UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
 
 
-
-\subsection{Saavutettavuus kuvateksteissä}
-
-Kaikkiin tutkielmassa esiintyviin kuviin tulee viitata tekstissä (ks.~\ref{kuvatus1}) Lisäksi kuvatekstin tulee olla kuvaileva, koska saavutettavuuteen liittyvät alt-tekstit eivät oikein toimi käytetyn \LaTeX :n axessibility-paketin kanssa. Jos kuvan perusteella tehdään päätelmä, tulee päätelmä kuvata tekstissä. 
-
-\begin{figure}[ht]
-\begin{center}
-\includegraphics[width=.45\textwidth]{siivet.jpg}
-\end{center}
-\label{kuvatus1}
-\caption{Geronon lemniskaatta välillä $[-1,1]$.}
-\end{figure}
-
-\section{Johdanto}
-
+\section{POHDINTA}
 \lipsum[1-10]
 
 
@@ -294,4 +303,9 @@ Kaikkiin tutkielmassa esiintyviin kuviin tulee viitata tekstissä (ks.~\ref{kuva
 \bibitem{Riemann} Riemann
 
 \end{thebibliography}
+
+\section{LIITTEET}
+
+Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava \cite{NewtLeib}.
+
 \end{document}
