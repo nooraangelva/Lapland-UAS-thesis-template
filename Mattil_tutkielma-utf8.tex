@@ -5,25 +5,26 @@
 \end{filecontents*}
 
 % Yllä on määritelty pdf/a-muotoon vaadittu metadata minimaalisella tavalla
-%Tämän LaTeX-pohjan laadintaan ovat osallistuneet Mika Hirvensalo, Teemu Pirttimäki, Petriina Paturi ja Vesa Halava
-\documentclass[a4paper,oneside]{article} 
-\usepackage{anyfontsize}
-% yksipuolinen
+%Tämän LaTeX-pohjan laadintaan ovat osallistuneet Mika Hirvensalo, Teemu Pirttimäki, Petriina Paturi ja Vesa Halava, Noora Angelva
+
+% yksipuolinen A4
+\documentclass[a4paper,12pt,oneside]{article}
+
 \usepackage[finnish]{babel}            				
 % suomenkielinen tavutus ja sanasto
 \usepackage[T1]{fontenc}               				
 % valitaan ääkkösfonttikoodaus
 \usepackage[utf8]{inputenc}        						
 % skandit utf-8 koodauksella
-\usepackage{amsthm}														% theorem- yms. ympäristöt
-\usepackage{amsmath}													% AMS-matematiikkatoimintoja
+\usepackage{amsthm}													% theorem- yms. ympäristöt
+\usepackage{amsmath}												% AMS-matematiikkatoimintoja
 \usepackage{graphicx}           							
 % kuvat
 %\usepackage[dvips]{graphicx}           			
 % ps-kuvat
 \usepackage{graphicx,wrapfig,lipsum}
 
-% Seuraavat rivit määrittävät LaTeXin oletusfontin Computer Modern sijasta käytettäväksi New TX-fontin. Poista 
+% Seuraavat rivit määrittävät LaTeXin oletusfontin Computer Modern sijasta käytettäväksi Arial-fontin. Poista 
 % rivien ensimmäinen % jos tahdot käyttää New TX-fonttia.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %\usepackage{newtxtext}       
@@ -32,6 +33,7 @@
 \usepackage[tagpdf]{axessibility} %Saavutettavuuspaketti, kaavoista tulee lukuohjelmalla luettavampia
 %HUOM: LaTeXin erillinen accessibility-paketti ei toimi amsthm-paketin kanssa.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % Seuraavat rivit määrittävät saavutettavuuden kannalta riittävän pdf/a-muodon UTUGradu-järjestelmään.
 % Gradua voi olla mukavampi työstää ilman näitä, ne voi ottaa käyttöön vasta 
 
@@ -41,29 +43,39 @@
 \usepackage[pdfa]{hyperref}										% pdf/a-muotoa varten
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Testauksen vuoksi pseudolatinaa tuottava
 % paketti. Et tarvitse tätä omassa työssäsi.
 \usepackage{lipsum}  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Fontti määritys
+% Fontin ja tekstin määritykset
+
 %\renewcommand{\familydefault}{\sfdefault}
 %\usepackage[scaled=1]{Arial}
 %\usepackage[Arial]{sfmath}
 %\everymath={\sf}
-
+\usepackage{setspace}
+\usepackage{anyfontsize}
+\usepackage{tabularx,lipsum}
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{0em}{1.5em}}
+\makeatother
 \renewcommand{\rmdefault}{phv} % Arial
 \renewcommand{\sfdefault}{phv} % Arial
+\usepackage{titlesec}
+\titleformat*{\subsubsection}{\normalfont}
+\titleformat*{\section}{\normalfont}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% A4 mitat ovat 210x297 (mm), ylämarginaali 30 mm, vasen marginaali 30 mm
+% A4 mitat ovat 210x297 (mm), 
+% ylämarginaali 30 mm, vasen marginaali 30 mm
 
 % Lapin AMK
 % 40 mm vasen reuna lapinamk
 % 20 mm ylä- ja oikreuna lapinamk
 % 210 - 40 - 20 = 150 leveys
 % 297 - 20 -20 = 257 korkeus
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage{geometry}
 \geometry{
@@ -72,7 +84,6 @@
  left=40mm,
  top=20mm,
  }
-% asettelu!!!!!!!!!!!!
 %https://en.wikibooks.org/wiki/LaTeX/Page_Layout
 
 %Suomenkieliset ympäristöt: 
@@ -107,49 +118,57 @@
 \newcommand{\koulutus}{{Koulutus}} %Koulutus
 \newcommand{\alaotsikko}{{alaotsikko}}
 \newcommand{\taustaprojekti}{{mahd. taustaprojekti}}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%Dokumentin aloitus
+
+%%%%%%%%%%%%%%      Dokumentin aloitus      %%%%%%%%%%%%%%%%%%
 
 \begin{document}
-\pagenumbering{arabic} %Saavuttavuuden takija alussa sivunurot roomalaisittain, tutkielman alusta arabialaisittain.
-\pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 
+%%%%%%%%%%% Kansi %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\pagenumbering{arabic} %sivunumerot aribialaisittain
+\pagestyle{empty}  %ei sivunumeroa sivun alareunaan tälle sivulle
+
+% Logo
 \begin{center}
 \includegraphics[width=6cm]{UAS_Logo}
 \end{center}
 
+% Otsikko
 \vspace{8.5cm}
-\begin{center}\fontsize{16pt}{1pt}\selectfont
+\begin{center}
+\fontsize{16pt}{1pt}\selectfont
 \otsikko \\ 
 \vspace{0.7cm}
 \fontsize{14pt}{1pt}\selectfont
 \alaotsikko
 \end{center}
 
+% Info
 \vspace{5cm}
 \begin{center}
-
 \taustaprojekti\\
-\vspace{0.7cm}
+\vspace{0.6cm}
 \tekija \\
-\vspace{0.7cm}
+\vspace{0.6cm}
 \opinnaytetyo \\
 \koulutus\\
 \tutkintonimike
-
 \end{center}
 
+% Vuosi
 \begin{center}\fontsize{16pt}{1pt}\selectfont
 \aika
 \end{center}
 
-% TIIVISTELMÄ (EN) %
+% TIIVISTELMÄ (EN) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage\null
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 
 % YLATUNNISTE
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}{0.22\textwidth}
 \includegraphics[width=3.7cm]{ylatunnisteLogo}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}\raggedleft
@@ -161,13 +180,17 @@ Abstract of Thesis\\
 \rule{\textwidth}{.1mm}\\
 
 % YLATUNNISTE END
-%korjaa taulukon näköseksi
-\noindent \textbf{Author} \	\tekija\
-Year \	\aika \\
-\noindent \textbf{Supervisor(s)}	\ \Ohjaajat \\
-\noindent \textbf{Commissioned by}	\ \Toimeksiantaja \\
-\noindent \textbf{Subject of thesis} \	\opinnaytetyo \\
-\noindent \textbf{Number of pages} \	XX + X \\
+
+% Tiedot
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+\textbf{Author} & \tekija \hspace{5cm} Year \hspace{1cm}\aika \\
+\textbf{Supervisor(s)}	& \Ohjaajat \\
+\textbf{Commissioned by}	& \Toimeksiantaja \\
+\textbf{Subject of thesis} &	\opinnaytetyo \\
+\textbf{Number of pages} &	XX + X \\
+\end{tabularx}
+
 \rule{\textwidth}{.1mm}\\
 
 %TIIVISTELMÄ (EN)->
@@ -183,13 +206,13 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \vspace{7mm}\noindent Keywords: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
 
 
-% TIIVISTELMÄ (FIN) %
+% TIIVISTELMÄ (FIN) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage\null
 \pagestyle{empty}  %ei sivunumeroa sivun alareunaan
 
 % YLATUNNISTE
-\begin{minipage}{0.4\textwidth}
+\begin{minipage}{0.22\textwidth}
 \includegraphics[width=3.7cm]{ylatunnisteLogo}
 \end{minipage}
 \begin{minipage}{0.6\textwidth}\raggedleft
@@ -201,12 +224,15 @@ Opinnäytetyön tiivistelmä\\
 \rule{\textwidth}{.1mm}\\
 % YLATUNNISTE END
 
-\noindent \textbf{Tekijä} \	\tekija\
-\noindent Vuosi \	\aika \\
-\noindent \textbf{Ohjaaja(t)}	\ \Ohjaajat \\
-\noindent \textbf{Toimeksiantaja}	\ \Toimeksiantaja \\
-\noindent \textbf{Työn nimi} \	\opinnaytetyo \\
-\noindent \textbf{Sivu- ja liitesivumäärä} \	XX + X \\
+% Tiedot
+\noindent
+\begin{tabularx}{\textwidth}{@{}>{\bfseries}l X@{}}
+\textbf{Tekijä} & \tekija \hspace{4cm} Vuosi \hspace{1cm}\aika \\
+\textbf{Ohjaaja(t)}	& \Ohjaajat \\
+\textbf{Toimeksiantaja}	& \Toimeksiantaja \\
+\textbf{Tyonantaja} &	\opinnaytetyo \\
+\textbf{Sivu- ja liitesivumäärä} &	XX + X \\
+\end{tabularx}
 \noindent\rule{\textwidth}{.1mm}\\
 
 
@@ -223,16 +249,18 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 \vspace{7mm}\noindent Asiasanat: tiivistelmäsivu, Pro gradu -tutkielma, \LaTeX-ladontajärjestelmä.
 
 
-% SISALLYSLUETTELO %
+% SISALLYSLUETTELO %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \newpage\null
+\doublespacing
 \tableofcontents
+
 %Aja laTeX-käännös uudelleen saadaksesi ajantasaisen sisällysluettelon
 %\cleardoublepage
 
+%%%%%%%%%%%%%%%%%%      TEKSTI OSUUS       %%%%%%%%%%%%%%%%%
 
-% TEKSTI OSUUS %
-
-% UUSI SIVU
+%%%%%%%%%%%%%%%% Alkusanat %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage\null
 \pagestyle{plain} 
 ALKUSANAT
@@ -240,16 +268,16 @@ ALKUSANAT
 
 Tässä luvussa kiitetään.
 
-% UUSI SIVU
+%%%%%%%%%%%% Kaytetyt merkit ja lyhenteet %%%%%%%%%%%5
 \newpage\null
 \pagestyle{plain} 
-KÄYTETYT MERKIT JA LYHENTEET
+\noindent KÄYTETYT MERKIT JA LYHENTEET
 
 \vspace{1.2cm}
 \noindent UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
 
 
-% UUSI SIVU
+%%%%%%%%%%%%%%%%    Johdanto   %%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage\null
 \pagestyle{plain} 
 
@@ -259,6 +287,7 @@ KÄYTETYT MERKIT JA LYHENTEET
 \vspace{0.7cm}
 \lipsum[1]
 
+%%%%%%%%%%%%%%      Käsittelyosa    %%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{KÄSITTELYOSA}
 
@@ -297,12 +326,15 @@ A=\left(\begin{array}{rrr} -1 & -2 & -5\\ 3& 4& 5\\ -3 & 2 & 1 \end{array}\right
 \]
 ominaisarvoja.
 
-
+%%%%%%%%%%%%%%%%%%% Pohdinta %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{POHDINTA}
 \lipsum[1]
 \vspace{0.7cm}
 \lipsum[1]
+
+
+%%%%%%%%%%%     Lähteet     %%%%%%%%%%%%%%%%%%%%%%%%
 
 %Kirjallisuusluettelon määrittelyssä {99} on levein kirjallisuusviitteen numero. Oikaise tarvittaessa.
  
@@ -313,6 +345,8 @@ ominaisarvoja.
 \bibitem{Riemann} Riemann
 
 \end{thebibliography}
+
+%%%%%%%%%%% liitteet %%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{LIITTEET}
 
