@@ -57,6 +57,7 @@
 \usepackage{setspace}
 \usepackage{anyfontsize}
 \usepackage{tabularx,lipsum}
+
 \makeatletter
 \renewcommand*\l@section{\@dottedtocline{1}{0em}{1.5em}}
 \makeatother
@@ -65,6 +66,8 @@
 \usepackage{titlesec}
 \titleformat*{\subsubsection}{\normalfont}
 \titleformat*{\section}{\normalfont}
+\setlength{\parskip}{0pt}
+\renewcommand{\baselinestretch}{1.0}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % A4 mitat ovat 210x297 (mm), 
@@ -190,12 +193,12 @@ Abstract of Thesis\\
 \textbf{Subject of thesis} &	\opinnaytetyo \\
 \textbf{Number of pages} &	XX + X \\
 \end{tabularx}
-
+\noindent
 \rule{\textwidth}{.1mm}\\
 
 %TIIVISTELMÄ (EN)->
-
-\noindent Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
+\noindent
+Kirjoita tähän tiivistelmä. Laita $\backslash${noindent}-komento kappaleen
 alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 
 \vspace{7mm}\noindent Komento $\backslash$vspace taasen jättää sopivan välin kappaleiden väliin - 4mm näyttää aika hyvältä.
@@ -259,12 +262,14 @@ alkuun, niin \LaTeX\, ei sisennä ensimmäistä riviä.
 %\cleardoublepage
 
 %%%%%%%%%%%%%%%%%%      TEKSTI OSUUS       %%%%%%%%%%%%%%%%%
-
+\setlength{\parskip}{12pt}
+\setlength\parindent{0pt}
+\renewcommand{\baselinestretch}{1.5}
 %%%%%%%%%%%%%%%% Alkusanat %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage\null
 \pagestyle{plain} 
 ALKUSANAT
-\vspace{1.2cm}
+%\vspace{1.2cm}
 
 Tässä luvussa kiitetään.
 
@@ -273,8 +278,8 @@ Tässä luvussa kiitetään.
 \pagestyle{plain} 
 \noindent KÄYTETYT MERKIT JA LYHENTEET
 
-\vspace{1.2cm}
-\noindent UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
+%\vspace{1.2cm}
+UTUGradu-järjestelmän ja PDF\LaTeX :n pdf-formaattivaatimusten takia kannattaa käyttää muita kuin eps-muotoisia kuvia. Esimerkiksi pdf-muoto käy mainiosti vektorikuville, kunhan on samaa pdf/a-3b muotoa kuin tämän tiedoston tuottama pdf-tiedosto. Parhaiten toimivat jpg-muotoiset kuvat.
 
 
 %%%%%%%%%%%%%%%%    Johdanto   %%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -290,7 +295,6 @@ Tässä luvussa kiitetään.
 %%%%%%%%%%%%%%      Käsittelyosa    %%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{KÄSITTELYOSA}
-
 \subsection{Saavutettavuus kuvateksteissä}
 
 Kaikkiin tutkielmassa esiintyviin kuviin tulee viitata tekstissä (ks.~\ref{kuvatus1}) Lisäksi kuvatekstin tulee olla kuvaileva, koska saavutettavuuteen liittyvät alt-tekstit eivät oikein toimi käytetyn \LaTeX :n axessibility-paketin kanssa. Jos kuvan perusteella tehdään päätelmä, tulee päätelmä kuvata tekstissä. 
@@ -337,19 +341,27 @@ ominaisarvoja.
 %%%%%%%%%%%     Lähteet     %%%%%%%%%%%%%%%%%%%%%%%%
 
 %Kirjallisuusluettelon määrittelyssä {99} on levein kirjallisuusviitteen numero. Oikaise tarvittaessa.
+\newpage\null
+\section{LÄHTEET}
  
-\begin{thebibliography}{99}
+ Tässä on malli lähdeluettelosta. Luettelossa on myös hyödyllistä opinnäytekirjal-lisuutta. Mallilähdeluettelossa on kappalevälistys (ennen 0 pt, jälkeen 12 pt, rivi-väli 1), joka tulee automaattisesti, kun painaa palautusnäppäintä (Enter/Return) lähteen lopussa.  Eri lähteiden välissä ei tällöin tarvita ylimääräistä tyhjää riviä. \\
 
-\bibitem{NewtLeib} Newton ja Leibniz
+Alasuutari, P. 2007. Laadullinen tutkimus. 6. painos. Tampere: Vastapaino.
 
-\bibitem{Riemann} Riemann
 
-\end{thebibliography}
+
+
 
 %%%%%%%%%%% liitteet %%%%%%%%%%%%%%%%%%%%%%%%%
-
+\newpage\null
 \section{LIITTEET}
 
-Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava \cite{NewtLeib}.
+Tässä luvussa esitetään niin kutsuttu Newtonin-Leibnizin kaava Liitteistä tehdään liiteluettelo, joka on omalla sivulla ennen varsinaisia liitesivuja. Liitteet on numeroimaton otsikko ja merkitään sisällykseen ja tekstiin näin: LIIT-TEET. Liitteet luetellaan ja otsikoidaan esiintymisjärjestyksessä seuraavan mal-lin mukaisesti: \\
+
+Liite 1. 	Aalto, internet-osoite\\
+Liite 2. 	Aalto, valokuva\\
+Liite 3. 	Aalto, kokeilu 1\\
+Liite 4. 	Aalto, kokeilu 2\\
+
 
 \end{document}
